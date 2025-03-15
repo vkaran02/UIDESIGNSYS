@@ -5,30 +5,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cultural Design System</title>
-    <!-- added google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap"
-        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="styles.css" rel="stylesheet">
+    <style>
+        /* Custom styles for Filled State with Drop Shadows */
+        .btn-filled {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add drop shadow */
+            margin-bottom: 10px; /* Spacing between buttons */
+        }
 
+        .btn-filled:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+        }
 
+        /* Custom styles for Outline State with Glossy Effect */
+        .btn-outline-glossy {
+            position: relative;
+            margin-bottom: 10px; /* Spacing between buttons */
+        }
+
+        .btn-outline-glossy::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.15);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-outline-glossy:hover::before {
+            opacity: 1; /* Glossy effect when hovered */
+        }
+
+        /* Ensure buttons are the same size */
+        .btn-sm {
+            padding: 8px 16px; /* Smaller padding for buttons */
+            font-size: 1rem; /* Smaller font size */
+        }
+
+        /* Spacing for sections */
+        .section-heading {
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        .button-section {
+            margin-bottom: 40px;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>Cultural Design Component System</h1>
-        <h2>
-            By - Nishant Talpade
-        </h2>
+        <h1>Thanos Design Component System</h1>
+        <h2>By - Vamsi Karanam</h2> <!-- Moved here below the h1 -->
         <p>
-            This is a simple 'Cultural Design Component System' is inspired by the rich cultural heritage of Pune, India. 
-            This design system is built by using Bootstrap 5.3.
-
+            This is a simple 'Thanos Design Component System' inspired by the Avengers Endgame. 
+            This design system is built using Bootstrap 5.3.
         </p>
+
         <div class="row">
             <div class="col">
                 <h2>1. Typography</h2>
@@ -39,28 +78,66 @@
             <div class="col">
                 <h3>Headings</h3>
                 <hr>
-                <h1>H1 Cultural Heading</h1>
-                <h2>H2 Cultural Heading</h2>
-                <h3>H3 Cultural Heading</h3>
-                <h4>H4 Cultural Heading</h4>
-                <h5>H5 Cultural Heading</h5>
-                <h6>H6 Cultural Heading</h6>
+                <h1>H1 Thanos Heading</h1>
+                <h2>H2 Thanos Heading</h2>
+                <h3>H3 Thanos Heading</h3>
+                <h4>H4 Thanos Heading</h4>
+                <h5>H5 Thanos Heading</h5>
+                <h6>H6 Thanos Heading</h6>
             </div>
             <div class="col">
                 <h3>Paragraphs</h3>
                 <hr>
-                <p>This is a sample paragraph that showcases the cultural design system.</p>
+                <p>This is a sample paragraph that showcases the Thanos design system.</p>
                 <p class="italics">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                     dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
                     laboris nisi ut aliquip ex ea commodo consequat.</p>
-
             </div>
         </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0
-    tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <!-- Add spacing to separate Typography and Buttons -->
+        <div class="row mt-5">
+            <div class="col">
+                <h2 class="section-heading">2. Buttons</h2>
+                <p>Below are two types of buttons: Filled State and Outline State.</p>
+            </div>
+        </div>
 
+        <!-- Filled State and Outline State Buttons side by side -->
+        <div class="row mt-4">
+            <!-- Filled State Buttons with Drop Shadow -->
+            <div class="col button-section">
+                <h3 class="section-heading">Filled State</h3>
+                <hr>
+                <button type="button" class="btn btn-primary btn-filled btn-sm">Primary</button>
+                <button type="button" class="btn btn-secondary btn-filled btn-sm">Secondary</button>
+                <button type="button" class="btn btn-success btn-filled btn-sm">Success</button>
+                <button type="button" class="btn btn-danger btn-filled btn-sm">Danger</button>
+                <button type="button" class="btn btn-warning btn-filled btn-sm">Warning</button>
+                <button type="button" class="btn btn-info btn-filled btn-sm">Info</button>
+                <button type="button" class="btn btn-light btn-filled btn-sm">Light</button>
+                <button type="button" class="btn btn-dark btn-filled btn-sm">Dark</button>
+            </div>
 
+            <!-- Outline State Buttons with Glossy Effect -->
+            <div class="col button-section">
+                <h3 class="section-heading">Outline State</h3>
+                <hr>
+                <button type="button" class="btn btn-outline-primary btn-outline-glossy btn-sm">Primary</button>
+                <button type="button" class="btn btn-outline-secondary btn-outline-glossy btn-sm">Secondary</button>
+                <button type="button" class="btn btn-outline-success btn-outline-glossy btn-sm">Success</button>
+                <button type="button" class="btn btn-outline-danger btn-outline-glossy btn-sm">Danger</button>
+                <button type="button" class="btn btn-outline-warning btn-outline-glossy btn-sm">Warning</button>
+                <button type="button" class="btn btn-outline-info btn-outline-glossy btn-sm">Info</button>
+                <button type="button" class="btn btn-outline-light btn-outline-glossy btn-sm">Light</button>
+                <button type="button" class="btn btn-outline-dark btn-outline-glossy btn-sm">Dark</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
 
